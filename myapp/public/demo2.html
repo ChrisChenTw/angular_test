@@ -1,0 +1,25 @@
+<html ng-app> <!-- "ng-app" is a Directive -->
+<head>
+	<title>Iterating with the ng-repeat Directive</title>
+</head>
+<body ng-init="names=['郭富城', '曾國城', '郭台銘']">
+	<h2>Iterating with the ng-repeat Directive</h2>
+	<div class="container">
+		<!-- "ng-model" is a Directive
+			 "ng-repeat" is a Directive
+			 "{{name}}" is a Data Binding expression
+		-->
+		Name:
+		<br />
+		<input type="text" ng-model="name" /> {{name}}
+		<br />
+		
+		<!-- 此範例input text即時顯示跟列舉功能是兩個不相關的功能! -->
+		<ul>
+			<li ng-repeat="personName in names">{{personName}}</li>
+		</ul>
+	</div>
+	
+	<script src="javascripts/angular.min.js"></script>
+</body>
+</html>

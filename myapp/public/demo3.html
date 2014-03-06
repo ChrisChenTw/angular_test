@@ -1,0 +1,19 @@
+<html ng-app> 
+<head>
+	<title>Using Filters</title>
+</head>
+<body ng-init="customers=[{name:'Chris Chen', city:'TW'},{name:'郭富城', city:'HK'}, {name:'曾國城', city:'TW'}, {name:'郭台銘', city:'TW'}]">
+	<h2>Using Filters</h2>
+	
+	Name:
+	<br />
+	<input type="text" ng-model="name" />
+	<br />
+	
+	<ul> <!-- filter by ng-model -->
+		<li ng-repeat="cust in customers | filter:name | orderBy:'city'" >{{cust.name | uppercase}} - {{cust.city | lowercase}}</li>
+	</ul>
+	
+	<script src="javascripts/angular.min.js"></script>
+</body>
+</html>
